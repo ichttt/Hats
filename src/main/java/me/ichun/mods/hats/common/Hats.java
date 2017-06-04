@@ -23,12 +23,12 @@ import java.io.File;
 
 @Mod(modid = "hats", name = "Hats",
         version = Hats.version,
-        dependencies = "required-after:ichunutil@[6.4.0,)",
-        acceptableRemoteVersions = "[" + iChunUtil.VERSION_OF_MC +".0.0)"
+        dependencies = "required-after:ichunutil@[6.4.0,)"
+//        acceptableRemoteVersions = "[" + iChunUtil.VERSION_OF_MC +".0.0)"
 )
 public class Hats
 {
-    public static final String version = iChunUtil.VERSION_OF_MC +".0.0";
+    public static final String version = "5.0.0";
 
     private static Logger logger = LogManager.getLogger("Hats");
 
