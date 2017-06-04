@@ -249,28 +249,28 @@ public class TickHandlerServer
             itemsListCopy.add(is.copy());
         }
 
-        for(int i = origin.inventory.mainInventory.size() - 1; i >= 0; i--)
+        for(int i = origin.inventory.mainInventory.length - 1; i >= 0; i--)
         {
-            ItemStack is = origin.inventory.mainInventory.get(i);
-            if(!is.isEmpty())
+            ItemStack is = origin.inventory.mainInventory[i];
+            if(is != null)
             {
                 for(int j = itemsListCopy.size() - 1; j >= 0; j--)
                 {
                     ItemStack is1 = itemsListCopy.get(j);
                     if(is1.isItemEqual(is) && ItemStack.areItemStackTagsEqual(is, is1))
                     {
-                        while(is.getCount() > 0 && is1.getCount() > 0)
+                        while(is.stackSize > 0 && is1.stackSize > 0)
                         {
-                            is.setCount(is.getCount()-1);
-                            is1.setCount(is1.getCount()-1);
+                            is.stackSize--;
+                            is1.stackSize--;
                         }
-                        if(is1.getCount() <= 0)
+                        if(is1.stackSize <= 0)
                         {
                             itemsListCopy.remove(j);
                         }
                     }
                 }
-//                if(is.getCount() <= 0)
+//                if(is.stackSize <= 0)
 //                {
 //                    origin.inventory.mainInventory.add(i, ItemStack.EMPTY);
 //                }
@@ -285,12 +285,12 @@ public class TickHandlerServer
                 ItemStack is1 = itemsList.get(i);
                 if(is1.isItemEqual(is) && ItemStack.areItemStackTagsEqual(is, is1))
                 {
-                    while(is.getCount() > 0 && is1.getCount() > 0)
+                    while(is.stackSize > 0 && is1.stackSize > 0)
                     {
-                        is.setCount(is.getCount()-1);
-                        is1.setCount(is1.getCount()-1);
+                        is.stackSize--;
+                        is1.stackSize--;
                     }
-                    if(is1.getCount() <= 0)
+                    if(is1.stackSize <= 0)
                     {
                         itemsList.remove(i);
                     }

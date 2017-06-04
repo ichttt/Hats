@@ -1,15 +1,15 @@
 package me.ichun.mods.hats.client.core;
 
 import me.ichun.mods.hats.common.core.CommonProxy;
+import me.ichun.mods.ichunutil.client.module.tabula.model.ModelTabula;
+import me.ichun.mods.ichunutil.common.module.tabula.formats.ImportList;
+import me.ichun.mods.ichunutil.common.module.tabula.project.ProjectInfo;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.FMLClientHandler;
 import me.ichun.mods.hats.client.gui.GuiHatSelection;
 import me.ichun.mods.hats.common.core.HatHandler;
 import me.ichun.mods.hats.common.thread.ThreadHatsReader;
-import me.ichun.mods.ichunutil.common.module.tabula.client.formats.ImportList;
-import me.ichun.mods.ichunutil.common.module.tabula.client.model.ModelTabula;
-import me.ichun.mods.ichunutil.common.module.tabula.common.project.ProjectInfo;
 
 import java.io.File;
 import java.util.HashMap;

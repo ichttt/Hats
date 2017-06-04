@@ -83,7 +83,7 @@ public class EventHandler
             MobSpawnerBaseLogic logic = HatHandler.getMobSpawnerLogic(te.getClass(), te);
             if(logic.isActivated())
             {
-                Entity entity = EntityList.createEntityByIDFromName(logic.getEntityId(), logic.getSpawnerWorld());
+                Entity entity = EntityList.createEntityByIDFromName(logic.getEntityNameToSpawn(), logic.getSpawnerWorld());
                 if(entity != null)
                 {
                     if(living.getClass() == entity.getClass())

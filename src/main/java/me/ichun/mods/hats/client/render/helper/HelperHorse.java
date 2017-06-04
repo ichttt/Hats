@@ -1,7 +1,6 @@
 package me.ichun.mods.hats.client.render.helper;
 
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.passive.AbstractHorse;
 import net.minecraft.entity.passive.EntityHorse;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -38,14 +37,14 @@ public class HelperHorse extends RenderOnEntityHelper {
 	@Override
 	public float getPrevRotationPitch(EntityLivingBase living)
 	{
-		return (float)Math.toDegrees(((AbstractHorse)living).getRearingAmount(1.0F) * ((float)Math.PI / 4F));
+		return (float)Math.toDegrees(((EntityHorse)living).getRearingAmount(1.0F) * ((float)Math.PI / 4F));
 	}
 	
 	@SideOnly(Side.CLIENT)
 	@Override
 	public float getRotationPitch(EntityLivingBase living)
 	{
-		return (float)Math.toDegrees(((AbstractHorse)living).getRearingAmount(1.0F) * ((float)Math.PI / 4F));
+		return (float)Math.toDegrees(((EntityHorse)living).getRearingAmount(1.0F) * ((float)Math.PI / 4F));
 	}
 	
 	@Override
@@ -78,4 +77,5 @@ public class HelperHorse extends RenderOnEntityHelper {
 		return 10F/8F;
 	}
 
+	
 }

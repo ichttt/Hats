@@ -1,5 +1,7 @@
 package me.ichun.mods.hats.common.core;
 
+import me.ichun.mods.ichunutil.common.module.tabula.formats.ImportList;
+import me.ichun.mods.ichunutil.common.module.tabula.project.ProjectInfo;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -17,8 +19,6 @@ import me.ichun.mods.hats.common.packet.PacketPing;
 import me.ichun.mods.hats.common.packet.PacketRequestHat;
 import me.ichun.mods.hats.common.packet.PacketString;
 import me.ichun.mods.ichunutil.common.core.util.IOUtil;
-import me.ichun.mods.ichunutil.common.module.tabula.client.formats.ImportList;
-import me.ichun.mods.ichunutil.common.module.tabula.common.project.ProjectInfo;
 
 import java.io.*;
 import java.lang.reflect.Field;

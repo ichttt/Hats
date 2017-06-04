@@ -114,7 +114,7 @@ public class GuiTradeWindow extends GuiScreen
         invSlots = 0;
         for(ItemStack is : mc.player.inventory.mainInventory)
         {
-            if(!is.isEmpty())
+            if(is != null)
             {
                 items.add(is.copy());
                 invSlots++;
@@ -226,9 +226,9 @@ public class GuiTradeWindow extends GuiScreen
         int tradeSize = ourItemsForTrade.size();
         boolean flag = false;
         boolean scroll = true;
-        if(grabbedStack.isEmpty())
+        if(grabbedStack == null)
         {
-            if(!is.isEmpty())
+            if(is != null)
             {
                 if(btn == 0)
                 {
@@ -244,8 +244,8 @@ public class GuiTradeWindow extends GuiScreen
                 }
                 else if(btn == 1)
                 {
-                    ItemStack is1 = is.splitStack(is.getCount() / 2);
-                    if(is1.getCount() == 0)
+                    ItemStack is1 = is.splitStack(is.stackSize / 2);
+                    if(is1.stackSize == 0)
                     {
                         grabbedStack = is;
                         refList.remove(is);
@@ -254,7 +254,7 @@ public class GuiTradeWindow extends GuiScreen
                     {
                         grabbedStack = is1;
                     }
-                    if(is.getCount() <= 0)
+                    if(is.stackSize <= 0)
                     {
                         refList.remove(is);
                     }
@@ -267,25 +267,25 @@ public class GuiTradeWindow extends GuiScreen
             boolean added = false;
             for(ItemStack is1 : refList)
             {
-                if(is1.isItemEqual(is) && ItemStack.areItemStackTagsEqual(is, is1) && is1.getCount() < is1.getMaxStackSize() && is.getCount() > 0)
+                if(is1.isItemEqual(is) && ItemStack.areItemStackTagsEqual(is, is1) && is1.stackSize < is1.getMaxStackSize() && is.stackSize > 0)
                 {
                     if(btn == 0)
                     {
-                        while(is1.getCount() < is1.getMaxStackSize() && is.getCount() > 0)
+                        while(is1.stackSize < is1.getMaxStackSize() && is.stackSize > 0)
                         {
-                            is1.setCount(is1.getCount()+1);
-                            is.setCount(is.getCount()-1);
+                            is1.stackSize ++ ;
+                            is.stackSize --;
                         }
                     }
                     else if(btn == 1)
                     {
-                        is1.setCount(is1.getCount()+1);
-                        is.setCount(is.getCount()-1);
+                        is1.stackSize++;
+                        is.stackSize--;
                         added = true;
                     }
                 }
             }
-            if(is.getCount() <= 0)
+            if(is.stackSize <= 0)
             {
                 grabbedStack = null;
             }
@@ -297,7 +297,7 @@ public class GuiTradeWindow extends GuiScreen
             else if(btn == 1 && !added)
             {
                 refList.add(is.splitStack(1));
-                if(is.getCount() <= 0)
+                if(is.stackSize <= 0)
                 {
                     grabbedStack = null;
                 }
@@ -649,7 +649,7 @@ public class GuiTradeWindow extends GuiScreen
             }
         }
 
-        if(grabbedStack.isEmpty())
+        if(grabbedStack == null)
         {
             boolean isOnOurScroll = x >= guiLeft + 237 && x < guiLeft + 237 + 12 && y >= guiTop + 18 && y < guiTop + 18 + 37 + 15;
             if(isOnOurScroll && btn == 0 && selfCanScroll)
@@ -719,7 +719,7 @@ public class GuiTradeWindow extends GuiScreen
 
     public void drawForeground(int x, int y, float par3)
     {
-        if(!grabbedStack.isEmpty())
+        if(grabbedStack != null)
         {
             drawItemStack(grabbedStack, x - 8, y - 8);
         }
@@ -1447,7 +1447,7 @@ public class GuiTradeWindow extends GuiScreen
 
     public void drawItemStack(ItemStack itemstack, int par2, int par3)
     {
-        if (itemstack.isEmpty())
+        if (itemstack == null)
         {
             GlStateManager.translate(0.0F, 0.0F, 50.0F);
             if(itemstack == grabbedStack)
@@ -1473,7 +1473,7 @@ public class GuiTradeWindow extends GuiScreen
     @Override
     protected void actionPerformed(GuiButton btn)
     {
-        if(grabbedStack.isEmpty())
+        if(grabbedStack == null)
         {
             if(btn.id == ID_TOGGLE_HATINV)
             {

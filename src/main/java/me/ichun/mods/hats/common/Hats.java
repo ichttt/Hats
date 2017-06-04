@@ -23,7 +23,7 @@ import java.io.File;
 
 @Mod(modid = "hats", name = "Hats",
         version = Hats.version,
-        dependencies = "required-after:ichunutil@[7.0.0,)",
+        dependencies = "required-after:ichunutil@[6.4.0,)",
         acceptableRemoteVersions = "[" + iChunUtil.VERSION_OF_MC +".0.0)"
 )
 public class Hats

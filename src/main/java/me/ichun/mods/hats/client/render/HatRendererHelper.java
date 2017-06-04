@@ -1,5 +1,6 @@
 package me.ichun.mods.hats.client.render;
 
+import me.ichun.mods.ichunutil.client.module.tabula.model.ModelTabula;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.fml.relauncher.Side;
@@ -9,7 +10,6 @@ import me.ichun.mods.hats.client.core.ClientProxy;
 import me.ichun.mods.hats.client.core.HatInfoClient;
 import me.ichun.mods.hats.common.Hats;
 import me.ichun.mods.hats.common.core.HatHandler;
-import me.ichun.mods.ichunutil.common.module.tabula.client.model.ModelTabula;
 
 @SideOnly(Side.CLIENT)
 public class HatRendererHelper

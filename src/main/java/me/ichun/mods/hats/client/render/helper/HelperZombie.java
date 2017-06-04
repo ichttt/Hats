@@ -29,6 +29,6 @@ public class HelperZombie extends RenderOnEntityHelper {
 	@Override
 	public float getOffsetPointVert(EntityLivingBase ent)
 	{
-		return 8/16F;
+		return ((EntityZombie)ent).isVillager() ? 10F/16F : 8F/16F;
 	}
 }

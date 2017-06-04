@@ -1,6 +1,7 @@
 package me.ichun.mods.hats.common.core;
 
 import me.ichun.mods.ichunutil.common.core.network.PacketChannel;
+import me.ichun.mods.ichunutil.common.module.tabula.formats.ImportList;
 import net.minecraft.command.CommandHandler;
 import net.minecraft.command.ICommandManager;
 import net.minecraft.entity.boss.EntityWither;
@@ -16,7 +17,6 @@ import me.ichun.mods.hats.common.Hats;
 import me.ichun.mods.hats.common.packet.*;
 import me.ichun.mods.hats.common.thread.ThreadGetModMobSupport;
 import me.ichun.mods.hats.common.thread.ThreadHatsReader;
-import me.ichun.mods.ichunutil.common.module.tabula.client.formats.ImportList;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -46,34 +46,23 @@ public class CommonProxy
 		CommonProxy.renderHelpers.put(EntityChicken.class		 , new HelperChicken());
 		CommonProxy.renderHelpers.put(EntityCow.class			 , new HelperCow());
 		CommonProxy.renderHelpers.put(EntityCreeper.class		 , new HelperCreeper());
-		CommonProxy.renderHelpers.put(EntityDonkey.class         , new HelperDonkey());
 		CommonProxy.renderHelpers.put(EntityEnderman.class		 , new HelperEnderman());
-		CommonProxy.renderHelpers.put(EntityEvoker.class		 , new HelperEvoker());
 		CommonProxy.renderHelpers.put(EntityGhast.class			 , new HelperGhast());
 		CommonProxy.renderHelpers.put(EntityGiantZombie.class	 , new HelperGiantZombie());
-		CommonProxy.renderHelpers.put(EntityGuardian.class       , new HelperGuardian());
 		CommonProxy.renderHelpers.put(EntityHorse.class			 , new HelperHorse());
-		CommonProxy.renderHelpers.put(EntityMule.class           , new HelperMule());
 		CommonProxy.renderHelpers.put(EntityOcelot.class		 , new HelperOcelot());
 		CommonProxy.renderHelpers.put(EntityPig.class			 , new HelperPig());
 		CommonProxy.renderHelpers.put(EntityPlayer.class		 , new HelperPlayer());
 		CommonProxy.renderHelpers.put(EntityPolarBear.class      , new HelperPolarBear());
-		CommonProxy.renderHelpers.put(EntityStray.class			 , new HelperStray());
 		CommonProxy.renderHelpers.put(EntitySheep.class			 , new HelperSheep());
 		CommonProxy.renderHelpers.put(EntityShulker.class        , new HelperShulker());
 		CommonProxy.renderHelpers.put(EntitySkeleton.class		 , new HelperSkeleton());
-		CommonProxy.renderHelpers.put(EntitySkeletonHorse.class  , new HelperSkeletonHorse());
 		CommonProxy.renderHelpers.put(EntitySlime.class			 , new HelperSlime());
 		CommonProxy.renderHelpers.put(EntitySpider.class		 , new HelperSpider());
 		CommonProxy.renderHelpers.put(EntitySquid.class			 , new HelperSquid());
 		CommonProxy.renderHelpers.put(EntityVillager.class		 , new HelperVillager());
-		CommonProxy.renderHelpers.put(EntityVindicator.class     , new HelperVindictor());
-		CommonProxy.renderHelpers.put(EntityVex.class		     , new HelperVex());
-		CommonProxy.renderHelpers.put(EntityWitherSkeleton.class , new HelperWitherSkeleton());
 		CommonProxy.renderHelpers.put(EntityWolf.class			 , new HelperWolf());
 		CommonProxy.renderHelpers.put(EntityZombie.class		 , new HelperZombie());
-		CommonProxy.renderHelpers.put(EntityZombieHorse.class    , new HelperZombieHorse());
-		CommonProxy.renderHelpers.put(EntityZombieVillager.class , new HelperZombieVillager());
 		CommonProxy.renderHelpers.put(EntityWither.class		 , new HelperWither());
 
         getHatMobModSupport();//Done after initial mapping so that the new JSON can override the mod's vanilla helpers.
